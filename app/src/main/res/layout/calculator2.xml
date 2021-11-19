@@ -86,6 +86,109 @@
             android:backgroundTint="@color/RAL1015"
             android:text="@string/button_multiply"
             android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_4"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_4"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_5"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_5"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_6"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_minus"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_minus"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_1"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_2"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_3"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_plus"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_0"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_00"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_00"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_equal"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_equal"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_comma"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="@color/RAL1015"
+            android:text="@string/button_comma"
+            android:textColor="@color/black" />
+
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
