@@ -2,19 +2,27 @@ package com.example.calculator.model;
 
 public class CalculatorImpl implements Calculator {
 
+    Double operand = 0.0;
     @Override
-    public double performOperation(double argOne, double argTwo, Operation operation) {
+    public Double performOperation(Double number, Operation operation) {
+
+
         switch (operation) {
             case NUM:
-                return argOne + argTwo;
+                return operand += number;
             case SUB:
-                return argOne - argTwo;
+                return operand -= number;
             case MULT:
-                return argOne * argTwo;
+                return operand *=number;
             case DIV:
-                return argOne / argTwo;
-            case CLEAN:return argOne;
+                if (number==0){
+                    operand=0.0;
+                }else return operand /=number;
+            case EQUAL:
+                return operand=number;
+            case CLEAN:
+                return operand=number;
         }
-        return 1;
+        return number;
     }
 }
