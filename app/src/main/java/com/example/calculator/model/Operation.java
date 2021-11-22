@@ -5,5 +5,6 @@ public enum Operation {
     SUB,
     MULT,
     DIV,
-    CLEAN
+    CLEAN,
+    EQUAL
 }
