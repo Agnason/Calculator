@@ -9,15 +9,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.model.CalculatorImpl;
-import com.example.calculator.model.Operation;
+import com.example.calculator.presenter.CalculatorPresenter;
 import com.example.calculator.view.CalculatorView;
 
 import java.util.HashMap;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
-    // поле ввода значений
-
+    // поле ввод значений
     private EditText txtNumberField;
+    //    поле операции
     private TextView txtOperation;
     // поле вывода результата
     private TextView txtResult;
@@ -41,9 +41,21 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         });
 
+        findViewById(R.id.button_C).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculatorPresenter.onCleanPressed();
+            }
+        });
+        findViewById(R.id.button_00).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculatorPresenter.onZeroZeroPressed();
+            }
+        });
+
         HashMap<Integer, Integer> numbers = new HashMap<>();
         numbers.put(R.id.button_0, 0);
-        numbers.put(R.id.button_00, 00);
         numbers.put(R.id.button_1, 1);
         numbers.put(R.id.button_2, 2);
         numbers.put(R.id.button_3, 3);
@@ -62,7 +74,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         };
         findViewById(R.id.button_0).setOnClickListener(numberClickListener);
-        findViewById(R.id.button_00).setOnClickListener(numberClickListener);
         findViewById(R.id.button_1).setOnClickListener(numberClickListener);
         findViewById(R.id.button_2).setOnClickListener(numberClickListener);
         findViewById(R.id.button_3).setOnClickListener(numberClickListener);
@@ -74,13 +85,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_9).setOnClickListener(numberClickListener);
 
 
-        HashMap<Integer, Operation> operation = new HashMap<>();
-        operation.put(R.id.button_divide, Operation.DIV);
-        operation.put(R.id.button_plus, Operation.NUM);
-        operation.put(R.id.button_minus, Operation.SUB);
-        operation.put(R.id.button_multiply, Operation.MULT);
-        operation.put(R.id.button_C, Operation.CLEAN);
-        operation.put(R.id.button_equal, Operation.EQUAL);
+        HashMap<Integer, String> operation = new HashMap<>();
+        operation.put(R.id.button_divide, "/");
+        operation.put(R.id.button_plus, "+");
+        operation.put(R.id.button_minus, "-");
+        operation.put(R.id.button_multiply, "*");
+        operation.put(R.id.button_equal, "=");
+        operation.put(R.id.button_percent, "%");
 
         View.OnClickListener operationsClickListener = new View.OnClickListener() {
             @Override
@@ -95,6 +106,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_multiply).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_C).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_equal).setOnClickListener(operationsClickListener);
+        findViewById(R.id.button_percent).setOnClickListener(operationsClickListener);
     }
 
     @Override
