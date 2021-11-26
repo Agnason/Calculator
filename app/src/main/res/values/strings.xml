@@ -20,5 +20,7 @@
     <string name="button_plus">+</string>
     <string name="button_equal">=</string>
     <string name="button_comma">,</string>
+    <string name="textNumberField">numberField</string>
+    <string name="textOperation">знак</string>
 
 </resources>
