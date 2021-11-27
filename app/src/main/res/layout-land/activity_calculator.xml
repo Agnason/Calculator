@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <!--поле для ввода значения-->
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/numberField"
         android:layout_width="@dimen/zero"
         android:layout_height="@dimen/zero"
+        android:layout_marginTop="@dimen/dp20"
         android:inputType="none"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="@dimen/textSizeField"
@@ -17,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/textNumberField" />
+        tools:text="numberField" />
     <!--поле для знака операции-->
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/infoOperation"
@@ -29,9 +31,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numberField"
-        tools:text="@string/textOperation" />
+        tools:text="знак" />
     <!--результат-->
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/result"
         android:layout_width="@dimen/zero"
@@ -49,15 +50,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/GridLayout_marginBottom"
-        android:columnCount="4"
-        android:theme="@style/CalcButton"
-        app:layout_constraintBottom_toTopOf="@id/radioButtons"
+        android:columnCount="7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result">
-
         <!--проверка коменнтария-->
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_C"
             style="@style/CalcButton.C"
@@ -76,48 +74,30 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_divide"
             style="@style/CalcButton"
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
             android:text="@string/button_divide" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_7"
-            style="@style/CalcButton"
-            android:text="@string/button_7" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_8"
-            style="@style/CalcButton"
-            android:text="@string/button_8" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_9"
-            style="@style/CalcButton"
-            android:text="@string/button_9" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_multiply"
             style="@style/CalcButton"
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
             android:text="@string/button_multiply" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_4"
+            android:id="@+id/button_plus"
             style="@style/CalcButton"
-            android:text="@string/button_4" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_5"
-            style="@style/CalcButton"
-            android:text="@string/button_5" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_6"
-            style="@style/CalcButton"
-            android:text="@string/button_6" />
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
+            android:text="@string/button_plus" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
             style="@style/CalcButton"
-            android:text="@string/button_minus"
-            android:textColor="#757575" />
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
+            android:text="@string/button_minus" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_1"
@@ -135,17 +115,39 @@
             android:text="@string/button_3" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_plus"
+            android:id="@+id/button_4"
             style="@style/CalcButton"
-            android:layout_rowSpan="3"
-            android:layout_gravity="fill"
-            android:text="@string/button_plus" />
+            android:text="@string/button_4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_5"
+            style="@style/CalcButton"
+            android:text="@string/button_5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_6"
+            style="@style/CalcButton"
+            android:text="@string/button_6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_7"
+            style="@style/CalcButton"
+            android:text="@string/button_7" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_8"
+            style="@style/CalcButton"
+            android:text="@string/button_8" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_9"
+            style="@style/CalcButton"
+            android:text="@string/button_9" />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_0"
             style="@style/CalcButton"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"
             android:text="@string/button_0" />
 
         <com.google.android.material.button.MaterialButton
@@ -153,12 +155,12 @@
             style="@style/CalcButton"
             android:text="@string/button_00" />
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
             style="@style/CalcButton"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"
             android:text="@string/button_equal" />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_comma"
@@ -166,28 +168,5 @@
             android:text="@string/button_comma" />
 
     </GridLayout>
-
-    <RadioGroup
-        android:id="@+id/radioButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GridLayout">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/radioButtonMyCoolStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/theme2" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/radioButtonMaterialLight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/theme1" />
-
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
