@@ -39,7 +39,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="@dimen/textSizeField"
         app:layout_constraintBottom_toTopOf="@+id/GridLayout"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/infoOperation"
@@ -51,10 +50,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/GridLayout_marginBottom"
         android:columnCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:theme="@style/CalcButton"
+        app:layout_constraintBottom_toTopOf="@id/radioButtons"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result">
+
         <!--проверка коменнтария-->
 
         <com.google.android.material.button.MaterialButton
@@ -115,7 +116,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
             style="@style/CalcButton"
-            android:text="@string/button_minus" />
+            android:text="@string/button_minus"
+            android:textColor="#757575" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_1"
@@ -164,5 +166,28 @@
             android:text="@string/button_comma" />
 
     </GridLayout>
+
+    <RadioGroup
+        android:id="@+id/radioButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GridLayout">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonMyCoolStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme2" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonMaterialLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme1" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

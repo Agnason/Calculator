@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="zero">0dp</dimen>
-    <dimen name="textSizeField">55sp</dimen>
+    <dimen name="textSizeField">45sp</dimen>
     <dimen name="GridLayout_marginBottom">10dp</dimen>
     <dimen name="button_marginLeft">3dp</dimen>
     <dimen name="button_marginRight">3dp</dimen>
-    <dimen name="buttonCornerRadius">20dp</dimen>
+    <dimen name="dp20">20dp</dimen>
 </resources>
