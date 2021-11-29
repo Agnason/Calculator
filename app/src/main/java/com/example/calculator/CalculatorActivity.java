@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,11 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.model.CalculatorImpl;
 import com.example.calculator.presenter.CalculatorPresenter;
+import com.example.calculator.theme.CalculatorThemeActivity;
 import com.example.calculator.view.CalculatorView;
 
 import java.util.HashMap;
 
-public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
+public class CalculatorActivity extends AppCompatActivity implements CalculatorView, Constants {
     // поле ввод значений
     private EditText txtNumberField;
     //    поле операции
@@ -107,6 +109,9 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_C).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_equal).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_percent).setOnClickListener(operationsClickListener);
+
+
+
     }
 
     @Override
