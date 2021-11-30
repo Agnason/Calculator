@@ -48,5 +48,7 @@ public class CalculatorPresenter {
         number = number * 100;
         calculatorView.showEnterNumberField(String.valueOf(number));
     }
+
+
 }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="zero">0dp</dimen>
-    <dimen name="text_Size_Field">20 sp</dimen>
+    <dimen name="text_Size_Field">20sp</dimen>
     <dimen name="gridLayout_marginBottom">5dp</dimen>
     <dimen name="button_marginLeft">3dp</dimen>
     <dimen name="button_marginRight">3dp</dimen>

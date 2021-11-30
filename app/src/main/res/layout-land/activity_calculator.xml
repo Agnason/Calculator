@@ -180,7 +180,7 @@
             android:id="@+id/choose_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/them e2" />
+            android:text="@string/choose_theme" />
 
     </RadioGroup>
 

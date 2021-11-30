@@ -23,7 +23,7 @@
     <string name="textNumberField">numberField</string>
     <string name="textOperation">знак</string>
     <string name="theme1">тема1</string>
-    <string name="theme2">Выбор темы</string>
+    <string name="choose_theme">Выбор темы</string>
     <string name="open_browser">open browser</string>
     <string name="theme_one">One</string>
     <string name="theme_two">Two</string>
