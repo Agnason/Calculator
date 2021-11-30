@@ -1,20 +1,32 @@
 package com.example.calculator;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.model.CalculatorImpl;
 import com.example.calculator.presenter.CalculatorPresenter;
+import com.example.calculator.storage.ThemeStorage;
+import com.example.calculator.theme.CalculatorThemeActivity;
+import com.example.calculator.theme.Theme;
 import com.example.calculator.view.CalculatorView;
 
 import java.util.HashMap;
 
-public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
+public class CalculatorActivity extends AppCompatActivity implements CalculatorView, Constants {
     // поле ввод значений
     private EditText txtNumberField;
     //    поле операции
@@ -24,16 +36,57 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     // Presenter
     private CalculatorPresenter calculatorPresenter;
 
+    private ThemeStorage storage;
+
+    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                Theme theme = (Theme) result.getData().getSerializableExtra(CalculatorThemeActivity.EXTRA_THEME);
+
+                storage.saveTheme(theme);
+
+                recreate();
+            }
+        }
+    });
+
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        storage = new ThemeStorage(this);
+
+        Context me = this;
+
+        Context applicationContext = getApplicationContext();
+
+        SuperReporitory superReporitory = SuperReporitory.getInstance(getApplicationContext());
+
+//        LayoutInflater.from(me).inflate(R.layout.activity_calculator, null);
+//        LayoutInflater.from(applicationContext).inflate(R.layout.activity_calculator, null);
+
+
+//        if (savedInstanceState != null) {
+//            currentTheme = savedInstanceState.getInt(ARG_SAVED_THEME);
+//        }
+
+        setTheme(storage.getSavedTheme().getTheme());
+
         setContentView(R.layout.activity_calculator);
-        txtNumberField = findViewById(R.id.numberField);
-        txtOperation = findViewById(R.id.infoOperation);
-        txtResult = findViewById(R.id.result);
 
         calculatorPresenter = new CalculatorPresenter(new CalculatorImpl(), this);
 
+//        if (savedInstanceState != null) {
+//            calculatorPresenter.restoreState(savedInstanceState);
+//        }
+
+        txtResult = findViewById(R.id.result);
+
+        if (getIntent().hasExtra("hello")) {
+            txtResult.setText(getIntent().getStringExtra("hello"));
+        }
         findViewById(R.id.button_comma).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +160,17 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_C).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_equal).setOnClickListener(operationsClickListener);
         findViewById(R.id.button_percent).setOnClickListener(operationsClickListener);
+
+
+        // кнопка выбора темы
+    findViewById(R.id.choose_theme).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(CalculatorActivity.this, CalculatorThemeActivity.class);
+            intent.putExtra(CalculatorThemeActivity.EXTRA_THEME, storage.getSavedTheme());
+            launcher.launch(intent);
+        }
+    });
     }
 
     @Override

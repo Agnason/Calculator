@@ -8,18 +8,23 @@ public class CalculatorImpl implements Calculator {
     public Double performOperation(Double number, String string) {
 
         switch (string) {
-            case "+":
+            case "+": {
                 return operand += number;
-            case "-":
+            }
+            case "-": {
                 return operand -= number;
-            case "*":
+            }
+            case "*": {
                 return operand *= number;
-            case "/":
+            }
+            case "/": {
                 if (number == 0) {
                     operand = 0.0;
                 } else return operand /= number;
-            case "%":
+            }
+            case "%": {
                 return operand = number / 100;
+            }
         }
         return number;
     }

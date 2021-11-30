@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="text_Size_Field">45sp</dimen>
+    <dimen name="gridLayout_marginBottom">10dp</dimen>
+    <dimen name="button_marginLeft">3dp</dimen>
+    <dimen name="button_marginRight">3dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="half_default_padding">8dp</dimen>
+</resources>
